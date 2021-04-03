@@ -1,8 +1,14 @@
-
+import React from "react";
 
 function App() {
+  const greating = <div>Hi</div>
+  const dom = <h1 className="bigtitle">{greating} will</h1>
+  
   return (
-    <h1>Hellow, world</h1>
+    <React.Fragment>
+      <label htmlFor="bar">bar</label>
+      <input type ="text" onClick={()=>{console.log('clcked')}}/>
+    </React.Fragment>
   );
 }
 
