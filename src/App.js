@@ -8,8 +8,20 @@ function App() {
     <React.Fragment>
       <label htmlFor="bar">bar</label>
       <input type ="text" onClick={()=>{console.log('clcked')}}/>
+      <Cat/>
+      <Cat/>
+      <Cat/>
+      <Cat/>
+      <Cat/>
     </React.Fragment>
   );
 }
 
+const Cat = ()=>{
+  return(
+    <div>
+      <span>miau</span>
+    </div>
+  )
+}
 export default App;
