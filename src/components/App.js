@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import {increment,decrement} from '../actions';
+// コネクト関数をインポート
+import {increment,decrement,double} from '../actions';
+// アクションクリエイターを読み込んでいる
 
 
 
@@ -24,6 +26,7 @@ class App extends Component {
     this.setState({count: this.state.count -1})
   }
   */
+
   render(){
     const props = this.props;
 
@@ -36,6 +39,9 @@ class App extends Component {
         <button onClick={props.decrement}>
           -1
         </button>
+        <button onClick={props.double}>
+          *2
+        </button>
       </React.Fragment>
     
     );
@@ -44,12 +50,17 @@ class App extends Component {
 }
 
 const mapStateToProps = state =>({value:state.count.value})
+// ステートの情報から、このコンポーネントに必要なものをマッピングする
+// どういったオブジェクト
 const mapDispathToProps = dispatch => ({
   increment:()=> dispatch(increment()),
   decrement:()=> dispatch(decrement()),
-
-
+  double:()=> dispatch(double())
 })
+// ディスパッチ関数　
+// Reducer にタイプに応じた状態遷移させる
+
 
 export default connect(mapStateToProps, mapDispathToProps)(App)
+
 
