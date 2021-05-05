@@ -7,6 +7,8 @@ import { combineReducers } from 'redux'
 import count from './count'
 // カウントアプリの状態
 
-export default combineReducers({ count })
+import todo from './todo'
+
+export default combineReducers({ count, todo })
 // export default combineReducers({ foo,  bar, baz })
 //　複数の場合は上記
